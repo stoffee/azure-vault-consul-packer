@@ -78,10 +78,6 @@
         "/tmp/modules/install-consul/install-consul --version {{user `consul_version`}}",
         "/tmp/modules/install-dnsmasq/install-dnsmasq",
         "DEBIAN_FRONTEND=noninteractive apt-get -y autoremove",
-        "echo \"export AZURE_ACCOUNT_NAME={{user `azure_account_name`}}\">> /etc/profile.d/arm.sh",
-        "echo \"export AZURE_ACCOUNT_KEY={{user `azure_account_key`}}\">> /etc/profile.d/arm.sh",
-        "echo \"export AZURE_CONTAINER={{user `azure_container`}}\">> /etc/profile.d/arm.sh",
-        "chmod +x /etc/profile.d/arm.sh"
       ]
     },
     {
