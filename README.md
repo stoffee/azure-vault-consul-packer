@@ -24,6 +24,6 @@
 6. Build packer image 
  * ```packer build vault-enterprise-consul.json```
 
-7. [Build a VMSS in azure] (https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
+7. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
   * Add the custom-data.sh to the Cloud-Init portion of the Azure MVSS build
     - Update the environment variables to your values 
