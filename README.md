@@ -24,10 +24,17 @@
 8. Change the resource_group_name to match the name you created in step 4
  * ```"resource_group_name": "vault-ent",```
 
-9. Build packer image 
+9. Add your Certificats to the tls directory and update cert names cault-enterprise-consul.json
+  * crt.pem, key.pem, and full_chain.pem
+  * ```    "ca_public_key_path": "./tls/ca.crt.pem",
+    "tls_public_key_path": "./tls/vault.crt.pem",
+    "tls_private_key_path": "./tls/vault.key.pem```
+
+10. Build packer image 
  * ```packer build vault-enterprise-consul.json```
 
-10. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
+11. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
   * Add the custom-data.sh to the Cloud-Init portion of the Azure MVSS build
     - Update the environment variables to your values 
-11. alternative step to 10 is to use the create-vmss.sh on the cli.
+
+12. Alternative step to 10 is to use the create-vmss.sh on the cli.
