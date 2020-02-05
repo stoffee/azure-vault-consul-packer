@@ -26,9 +26,9 @@
 
 9. Add your Certificats to the tls directory and update cert names cault-enterprise-consul.json
   * crt.pem, key.pem, and full_chain.pem
-  * ```    "ca_public_key_path": "./tls/ca.crt.pem",
-    "tls_public_key_path": "./tls/vault.crt.pem",
-    "tls_private_key_path": "./tls/vault.key.pem```
+  * ```"ca_public_key_path": "./tls/ca.crt.pem",```
+  * ```"tls_public_key_path": "./tls/vault.crt.pem",```
+  * ```"tls_private_key_path": "./tls/vault.key.pem"```
 
 10. Build packer image 
  * ```packer build vault-enterprise-consul.json```
