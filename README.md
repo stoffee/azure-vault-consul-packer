@@ -30,4 +30,4 @@
 10. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
   * Add the custom-data.sh to the Cloud-Init portion of the Azure MVSS build
     - Update the environment variables to your values 
-* alternative step to 10 is to use the create-vmss.sh on the cli.
+11. alternative step to 10 is to use the create-vmss.sh on the cli.
