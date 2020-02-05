@@ -21,7 +21,7 @@
 7. create storage container
   * ```az storage container create -n MyStorageContainer --account-key $AZURE_ACCOUNT_KEY --account-name $AZURE_ACCOUNT_NAME```
 
-8. Change the resource_group_name to match the name you created in step 1
+8. Change the resource_group_name to match the name you created in step 4
  * ```"resource_group_name": "vault-ent",```
 
 9. Build packer image 
