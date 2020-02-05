@@ -1,0 +1,1 @@
+az vmss create --resource-group cdmain-rg --name micronvmsspoc --image cd-vault-consul-2020-02-04-045756 --custom-data custom-data.sh --ssh-key-value @id_rsa.pub --vnet-name cdpoc-vnet --subnet cdpoc-scaleset-subnet --admin-username stoffee --location westus2

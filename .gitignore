@@ -41,3 +41,10 @@ crash.log
 
 ## S/MIME message
 *.smime
+
+#ssh key
+*.pub
+*rsa*
+
+# stoffee stuff
+*stoffee*
