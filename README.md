@@ -13,10 +13,10 @@
  - AZURE_CONTAINER
 
 4. ```az group create --location "West US 2" --name vault-ent```
-5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group cdvault-ent --sku Standard_LRS```
+5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group vault-ent --sku Standard_LRS```
 
 6. GET KEYS AFTER YOU CREATE:
-  * ```az storage account keys list  --account-name vaultentsa --resource-group cdvault-ent --output table```
+  * ```az storage account keys list  --account-name vaultentsa --resource-group vault-ent --output table```
 
 7. create storage container
   * ```az storage container create -n MyStorageContainer --account-key $AZURE_ACCOUNT_KEY --account-name $AZURE_ACCOUNT_NAME```
