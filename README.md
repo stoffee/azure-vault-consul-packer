@@ -8,9 +8,6 @@
  - ARM_TENANT_ID
  - ARM_CLIENT_ID
  - ARM_CLIENT_SECRET
- - AZURE_ACCOUNT_NAME
- - AZURE_ACCOUNT_KEY
- - AZURE_CONTAINER
 
 4. ```az group create --location "West US 2" --name vault-ent```
 5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group vault-ent --sku Standard_LRS```
@@ -19,22 +16,27 @@
   * ```az storage account keys list  --account-name vaultentsa --resource-group vault-ent --output table```
 
 7. create storage container
-  * ```az storage container create -n MyStorageContainer --account-key $AZURE_ACCOUNT_KEY --account-name $AZURE_ACCOUNT_NAME```
+  * ```az storage container create -n VaultEntContainer --account-key $AZURE_ACCOUNT_KEY --account-name $AZURE_ACCOUNT_NAME```
 
-8. Change the resource_group_name to match the name you created in step 4
+8. Set these env vars
+ - AZURE_ACCOUNT_NAME
+ - AZURE_ACCOUNT_KEY
+ - AZURE_CONTAINER
+
+9. Edit vault-enterprise-consul.json and change the resource_group_name to match the name you created in step 4
  * ```"resource_group_name": "vault-ent",```
 
-9. Add your Certificats to the tls directory and update cert names cault-enterprise-consul.json
+10. Add your Certificats to the tls directory and update cert names in vault-enterprise-consul.json
   * crt.pem, key.pem, and full_chain.pem
   * ```"ca_public_key_path": "./tls/ca.crt.pem",```
   * ```"tls_public_key_path": "./tls/vault.crt.pem",```
   * ```"tls_private_key_path": "./tls/vault.key.pem"```
 
-10. Build packer image 
+11. Build packer image 
  * ```packer build vault-enterprise-consul.json```
 
-11. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
+12. [Build a VMSS in azure](https://portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Compute%2FvirtualMachineScaleSets)
   * Add the custom-data.sh to the Cloud-Init portion of the Azure MVSS build
     - Update the environment variables to your values 
 
-12. Alternative step to 10 is to use the create-vmss.sh on the cli.
+13. Alternative step to 12 is to use the create-vmss.sh on the cli.
