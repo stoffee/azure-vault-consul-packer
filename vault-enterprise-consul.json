@@ -13,7 +13,7 @@
     "consul_version": "1.6.3",
     "vault_version": "1.3.1+ent",
     "github_oauth_token": "{{env `GITHUB_OAUTH_TOKEN`}}",
-    "resource_group_name": "cdvault-ent",
+    "resource_group_name": "vault-img",
     "ca_public_key_path": "./tls/ca.crt.pem",
     "tls_public_key_path": "./tls/vault.crt.pem",
     "tls_private_key_path": "./tls/vault.key.pem"
@@ -25,7 +25,7 @@
       "tenant_id": "{{user `tenant_id`}}",
       "client_id": "{{user `client_id`}}",
       "client_secret": "{{user `client_secret`}}",
-      "managed_image_name": "vault-enterprise-consul-{{isotime \"2006-01-02-150405\"}}",
+      "managed_image_name": "cd-vault-enterprise-consul-{{isotime \"2006-01-02-150405\"}}",
       "managed_image_resource_group_name": "{{user `resource_group_name`}}",
       "os_type": "Linux",
       "image_publisher": "Canonical",

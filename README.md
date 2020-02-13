@@ -9,7 +9,7 @@
  - ARM_CLIENT_ID
  - ARM_CLIENT_SECRET
 
-4. ```az group create --location "West US 2" --name vault-ent```
+4. ```az login && az group create --location "West US 2" --name vault-ent```
 5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group vault-ent --sku Standard_LRS```
 
 6. GET KEYS AFTER YOU CREATE:
