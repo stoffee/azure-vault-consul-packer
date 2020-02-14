@@ -131,7 +131,7 @@ ha_storage "consul" {
 
   # HA settings
   cluster_addr  = "https://$instance_ip_address:$cluster_port"
-  redirect_addr = "https://$instance_ip_address:$cluster_port"
+  #redirect_addr = "https://$instance_ip_address:$cluster_port"
 }
 
 #seal "azurekeyvault" {
@@ -149,7 +149,7 @@ listener "tcp" {
   tls_key_file    = "$tls_key_file"
 }
 ui=true
-disable_mlock = tru
+disable_mlock = true
 EOF
   chown "$user:$user" "$config_path"
 }

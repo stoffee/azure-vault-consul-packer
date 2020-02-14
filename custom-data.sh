@@ -8,8 +8,6 @@ set -e
 # Send the log output from this script to custom-data.log, syslog, and the console
 exec > >(tee /var/log/custom-data.log|logger -t custom-data -s 2>/dev/console) 2>&1
 
-source /etc/profile.d/arm.sh
-
 # These variables are passed in via Terraform template interplation
 /opt/consul/bin/run-consul --server --scale-set-name "$SCALE_SET_NAME" --subscription-id "$ARM_SUBSCRIPTION_ID" --tenant-id "$ARM_TENANT_ID" --client-id "$ARM_CLIENT_ID" --secret-access-key "$ARM_SECRET_ACCESS_KEY"
 
