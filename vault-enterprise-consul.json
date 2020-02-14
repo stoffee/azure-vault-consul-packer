@@ -56,6 +56,16 @@
       "source": "{{user `tls_private_key_path`}}",
       "destination": "/tmp/vault.key.pem"
     },
+    {	
+      "type": "file",	
+      "source": "{{template_dir}}/custom-data-consul.sh",	
+      "destination": "/tmp/custom-data-consul.sh"	
+    },	
+    {	
+      "type": "file",	
+      "source": "{{template_dir}}/custom-data-vault.sh",	
+      "destination": "/tmp/custom-data-vault.sh"	
+    },
     {
       "type": "shell",
       "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",

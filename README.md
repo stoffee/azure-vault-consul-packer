@@ -9,11 +9,11 @@
  - ARM_CLIENT_ID
  - ARM_CLIENT_SECRET
 
-4. ```az login && az group create --location "West US 2" --name vault-ent```
-5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group vault-ent --sku Standard_LRS```
+4. ```az login && az group create --location "West US 2" --name vault-img```
+5. ```az storage account create --location "West US 2"  --name vaultentsa  --resource-group vault-img --sku Standard_LRS```
 
 6. GET KEYS AFTER YOU CREATE:
-  * ```az storage account keys list  --account-name vaultentsa --resource-group vault-ent --output table```
+  * ```az storage account keys list  --account-name vaultentsa --resource-group vault-img --output table```
 
 7. create storage container
   * ```az storage container create -n VaultEntContainer --account-key $AZURE_ACCOUNT_KEY --account-name $AZURE_ACCOUNT_NAME```
@@ -24,7 +24,7 @@
  - AZURE_CONTAINER
 
 9. Edit vault-enterprise-consul.json and change the resource_group_name to match the name you created in step 4
- * ```"resource_group_name": "vault-ent",```
+ * ```"resource_group_name": "vault-img",```
 
 10. Add your Certificats to the tls directory and update cert names in vault-enterprise-consul.json
   * crt.pem, key.pem, and full_chain.pem
